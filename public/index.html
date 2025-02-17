@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flex Frontend JS 1 Rest Countries Jens Christensen - Grit Academy</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="myScript.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex Frontend JS 1 Rest Countries Jens Christensen - Grit Academy</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/scripts.js" defer></script>
 </head>
 <body>
-   <header>
+  <header>
+  <h1>Flex Frontend JS 1 Rest Countries Jens Christensen - Grit Academy</h1>
+  </header> 
+  <main>
+    <!-- Search field with two options: Search by country or by language -->
+    <form>
+      <label for="search">Search by country or language:</label>
+      <input type="text" id="search" name="search" placeholder="Search by country or language">
+      <button type="submit">Search</button>
+      <select name="searchBy" id="searchBy">
+        <option value="country">Country</option>
+        <option value="language">Language</option>
+      </select>
+    </form>
 
-   </header> 
-   
-   <main>
-
-   </main>
-
-   <footer>
-
-   </footer>
+    <!-- Search result-->
+    <section id="searchResult">
+      <h2>Search result</h2>
+      <ul id="searchResultList"></ul>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; Flex Frontend JS 1 Rest Countries Jens Christensen - Grit Academy</p>
+  </footer>
 </body>
 </html>
