@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flex Frontend JS 1 Rest Countries Jens Christensen - Grit Academy</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/scripts.js" defer></script>
+  
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/scripts.js" defer></script>
 </head>
 <body>
+  <div class="container">
   <header>
   <h1>Flex Frontend JS 1 Rest Countries Jens Christensen - Grit Academy</h1>
   </header> 
@@ -16,11 +18,12 @@
     <form>
       <label for="search">Search by country or language:</label>
       <input type="text" id="search" name="search" placeholder="Search by country or language">
-      <button type="submit">Search</button>
-      <select name="searchBy" id="searchBy">
+      
+      <select name="searchBy" id="searchBy" title="searchBy">
         <option value="country">Country</option>
         <option value="language">Language</option>
       </select>
+      <button type="submit">Search</button>
     </form>
 
     <!-- Search result-->
@@ -32,5 +35,6 @@
   <footer>
     <p>&copy; Flex Frontend JS 1 Rest Countries Jens Christensen - Grit Academy</p>
   </footer>
+  </div>
 </body>
 </html>
