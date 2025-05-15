@@ -9,6 +9,11 @@ body {
   background-color: #eee;
 }
 
+header {
+  background-color: black;
+  color: #eee;
+}
+
 .container {
   background-color: white;
 }
