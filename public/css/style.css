@@ -9,6 +9,11 @@ body {
   background-color: #eee;
 }
 
+header {
+  background-color: black;
+  color: #eee;
+}
+
 .container {
   background-color: white;
 }
@@ -18,10 +23,33 @@ body {
   background-color: lightgrey;
 }
 
+.countries{
+    max-width: 1240px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.country-div{
+    background: white;
+    border: 1px solid black;
+    padding: 15px;
+}
+img{
+    width: 100%;
+    height: 150px;
+}
+
 footer {
   background-color: black;
   p {
     color: white;
   }
   padding: 0.5rem;
+}
+
+@media screen and (max-width: 576px){
+    .countries{
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

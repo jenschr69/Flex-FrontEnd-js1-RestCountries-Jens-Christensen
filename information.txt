@@ -1,4 +1,0 @@
-Publishing platform: Netlify / Oderland
-
-Custom domain: restcountries.jenschrchristensen.se
-Custom domain pointing to Netlify
