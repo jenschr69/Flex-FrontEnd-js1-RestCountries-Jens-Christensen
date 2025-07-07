@@ -2,7 +2,7 @@
 // All countries - https://restcountries.com/v3.1/all - On load?
 // Search by country name - https://restcountries.com/v3.1/name/{name}
 // Search by language - https://restcountries.com/v3.1/lang/{language}
-// Search by language or country - https://restcountries.com/v3.1/{searchType}/{searchPhrase}
+// Search by language or country - https://restcountries.com/v3.1/{searchType}/{searchPhrase} ?
 
 // Get all
 const loadCountryAPI = () =>{
