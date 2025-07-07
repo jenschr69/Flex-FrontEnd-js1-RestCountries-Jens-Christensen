@@ -4,4 +4,4 @@ Examensuppgift Flex Frontend - Rest Countries - Jens Christensen
 
 Publishing platform: Oderland
 
-Publishing domain: grit.jenschrchristensen.com/js1/restcountries
+Publishing domain: grit.jenschrchristensen.com/restcountries
