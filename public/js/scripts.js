@@ -1,4 +1,9 @@
-// this is an arrow function
+// API - https://restcountries.com
+// All countries - https://restcountries.com/v3.1/all - On load?
+// Search by country name
+// Search by language
+
+// Get all
 const loadCountryAPI = () =>{
     // fetch url of rest country from website
     fetch('https://restcountries.com/v3.1/all')
