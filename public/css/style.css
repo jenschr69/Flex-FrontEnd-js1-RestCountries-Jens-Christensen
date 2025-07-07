@@ -22,7 +22,8 @@ header {
 }
 
 #searchResult {
-  min-height: 300px;
+  display: none;
+  min-height: 30px;
   background-color: lightgrey;
 }
 
