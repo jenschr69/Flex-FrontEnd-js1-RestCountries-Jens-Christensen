@@ -15,16 +15,17 @@
   <h1>Flex Frontend JS 1 Rest Countries Jens Christensen - Grit Academy</h1>
   </header> 
   <main>
+
        <!-- Search field with two options: Search by country or by language -->
-    <form>
+    <form name="myForm">
       <label for="search">Search by country or language:</label>
       <input type="text" id="search" name="search" placeholder="Search by country or language">
       
       <select name="searchBy" id="searchBy" title="searchBy">
-        <option value="country">Country</option>
-        <option value="language">Language</option>
+        <option value="name">Country</option>
+        <option value="lang">Language</option>
       </select>
-      <button type="submit">Search</button>
+      <button type="submit" id="submit">Search</button>
     </form>
 
     <!-- Search result-->
