@@ -43,7 +43,8 @@ const displayCountries = (countries) =>{
     //let countries = []
 
     //countries.sort( (a,b) => a.name.common < b.name.common)
-
+    //countries.population.sort();
+    //countries.population.reverse();
     const countriesHTML = countries.map(country => getCountry(country));
     // displaying div to html
     container.innerHTML = countriesHTML.join(' ');
