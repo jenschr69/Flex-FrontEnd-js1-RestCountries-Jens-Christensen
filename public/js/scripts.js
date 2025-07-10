@@ -39,13 +39,17 @@ const displayCountries = (countries) =>{
     const container = document.getElementById('countries');
      if(!Array.isArray(countries)) {container.innerHTML="Nothing found..." ; return }
 
-    // console.log(countries);
-    //let countries = []
+    // Sort by population - Decending
+    // countries.sort( (a,b) => a.population < b.population);
 
-    //countries.sort( (a,b) => a.name.common < b.name.common)
-    //countries.population.sort();
-    //countries.population.reverse();
+    // Sort by country name - Acending
+    // countries.sort( (a,b) => b.name.common < a.name.common)
+
+    // Sort by country name - Decending
+    // countries.sort( (a,b) => a.name.common < b.name.common)
+
     const countriesHTML = countries.map(country => getCountry(country));
+
     // displaying div to html
     container.innerHTML = countriesHTML.join(' ');
 }
