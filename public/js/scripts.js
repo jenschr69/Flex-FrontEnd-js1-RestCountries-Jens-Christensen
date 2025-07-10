@@ -40,7 +40,7 @@ const displayCountries = (countries) =>{
      if(!Array.isArray(countries)) {container.innerHTML="Nothing found..." ; return }
 
     // Sort by population - Decending
-    // countries.sort( (a,b) => a.population < b.population);
+    countries.sort( (a,b) => a.population < b.population);
 
     // Sort by country name - Acending
     // countries.sort( (a,b) => b.name.common < a.name.common)
