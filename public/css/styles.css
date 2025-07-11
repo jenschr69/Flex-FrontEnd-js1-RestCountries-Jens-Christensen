@@ -7,15 +7,23 @@
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #eee;
+  padding: 1rem;
 }
 
 header {
   background-color: black;
   color: #eee;
+  padding: 0.2rem 1rem 0.2rem 1rem;
+  margin-bottom: 0.5rem;
+  a, :hover, :visited {
+    color: #eee;
+    text-decoration: none;
+  }
+  border-radius: 15px;
 }
 
 .container {
-  background-color: white;
+  background-color: #eee;
   max-width: 80%;
   margin: 0;
   padding: 0;
@@ -23,19 +31,20 @@ header {
 
 #searchResult {
   display: none;
-  min-height: 30px;
+  min-height: 50px;
   background-color: lightgrey;
 }
 
 .countries{
     max-width: 1240px;
+    min-height: 50dvh;
     margin: 20px auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 .country-div{
-    background: white;
+    background: #eee;
     border: 1px solid black;
     padding: 15px;
 }
@@ -47,9 +56,13 @@ img{
 footer {
   background-color: black;
   p {
-    color: white;
+    color: #eee;
   }
-  padding: 0.5rem;
+  a, :hover, :visited {
+    color: #eee;
+  }
+  padding: 1rem 1rem 0.2rem 1rem;
+  border-radius: 15px;
 }
 
 @media screen and (max-width: 576px){
