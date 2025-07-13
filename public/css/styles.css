@@ -71,15 +71,12 @@ input, select {
 }
 
 .countries{
-    max-width: 1240px;
-    /* min-height: 50dvh; */
-    padding: 1rem 0rem 1rem 0rem;
+    padding: 0.5rem 0rem 1rem 1rem;
     margin: 1px auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 .country-div{
+    width: 300px;
     background: #eee;
     border: 1px solid black;
     padding: 1rem;
