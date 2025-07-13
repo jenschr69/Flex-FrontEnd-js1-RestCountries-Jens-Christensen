@@ -16,27 +16,21 @@
   </header> 
   <main>
     <!-- Search field with two options: Search by country or by language -->
-    <form class="input-group input-group-lg gap-2 search_form mb-2" name="myForm">
-      <input class="form-control" type="text" id="search" name="search" placeholder="Search by country or language">
-      <select name="searchBy" id="searchBy" class="form-select" title="searchBy">
-        <option>Search by...</option>
-        <option selected value="name">Country</option>
-        <option value="lang">Language</option>
-      </select>
-      <button type="submit" id="submit" class="btn btn_search">Search</button>
+    <form class="search_form mb-2 row" name="myForm">
+      <div class="col-5 d-inline-flex search-div mt-1">
+        <input class="form-control" type="text" id="search" name="search" placeholder="Search by country or language">
+      </div>
+      <div class="col-5 d-inline-flex search-div mt-1">
+        <select name="searchBy" id="searchBy" class="form-select col-4" title="searchBy">
+          <option>Search by...</option>
+          <option selected value="name">Country</option>
+          <option value="lang">Language</option>
+        </select>
+      </div>
+      <div class="col-2 d-inline-flex mt-1 mb-1">
+        <button type="submit" id="submit" class="btn btn_search">Search</button>
+      </div>
     </form>
-
-    <!-- Old Search Form
-    <form class="input-group input-group-lg gap-2 search_form mb-2" name="myForm">
-      <input class="form-control" type="text" id="search" name="search" placeholder="Search by country or language">
-      <select name="searchBy" id="searchBy" class="form-select" title="searchBy">
-        <option>Search by...</option>
-        <option selected value="name">Country</option>
-        <option value="lang">Language</option>
-      </select>
-      <button type="submit" id="submit" class="btn btn_search">Search</button>
-    </form>
-    -->
 
     <!-- Search result-->
     <section id="searchResult" class="search_result">

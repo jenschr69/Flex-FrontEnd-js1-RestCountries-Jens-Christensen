@@ -25,7 +25,7 @@ body {
 header {
   background-color: black;
   color: #eee;
-  padding: 0.2rem 1rem 0.2rem 1rem;
+  padding: 0.4rem 1rem 0.2rem 1rem;
   margin-bottom: 0.5rem;
   a, :hover, :visited {
     color: #eee;
@@ -41,7 +41,13 @@ input, select {
 }
 
 .search_form {
-  border-radius: 0;
+  padding-left: 1rem;
+  padding-right: 2rem;
+}
+
+.search-div {
+  padding: 0;
+  margin: 0;
 }
 
 .btn_search {
@@ -50,14 +56,6 @@ input, select {
   border: 1px solid whitesmoke;
   border-radius: 15px !important;
 }
-
-/*
-.input-group > .btn {
-  border-radius: 15px !important;
-  padding: 0rem 1rem 0rem 1rem !important;
-  margin: none !important;
-}
-*/
 
 /* Styling of search results */
 #searchResult {
