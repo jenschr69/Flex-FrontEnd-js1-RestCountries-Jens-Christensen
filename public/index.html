@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
   <title>Flex Frontend JS 1 Rest Countries Jens Christensen - Grit Academy</title>
   
   <link rel="stylesheet" href="./css/styles.css">
@@ -23,13 +23,24 @@
         <option selected value="name">Country</option>
         <option value="lang">Language</option>
       </select>
-      <button type="submit" id="submit" class="btn btn-secondary">Search</button>
+      <button type="submit" id="submit" class="btn btn_search">Search</button>
     </form>
+
+    <!-- Old Search Form
+    <form class="input-group input-group-lg gap-2 search_form mb-2" name="myForm">
+      <input class="form-control" type="text" id="search" name="search" placeholder="Search by country or language">
+      <select name="searchBy" id="searchBy" class="form-select" title="searchBy">
+        <option>Search by...</option>
+        <option selected value="name">Country</option>
+        <option value="lang">Language</option>
+      </select>
+      <button type="submit" id="submit" class="btn btn_search">Search</button>
+    </form>
+    -->
 
     <!-- Search result-->
     <section id="searchResult" class="search_result">
-      <h2>Search result</h2>
-      <ul id="searchResultList"></ul>
+      <h2 class="p-2">Search result</h2>
     </section>
 
     <div class="countries" id="countries">

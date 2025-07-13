@@ -10,8 +10,9 @@ let searchType ="" , searchPhrase =""
 function validateForm() {
     let x = document.forms["myForm"]["search"].value;
     if (x == "") {
-        alert("searchphrase must be filled out");
-        document.getElementById("searchResult").style.display="none"
+        alert("Search phrase must be filled out");
+        // document.getElementById("searchErrorMessage").style.display="block";
+        document.getElementById("searchResult").style.display="none";
         return false;
     }
 }
@@ -34,10 +35,12 @@ const loadCountryAPI = () =>{
     .then(data => displayCountries(data))
 }
 
-// displaying all countries
+// Displaying Countries
 const displayCountries = (countries) =>{
     const container = document.getElementById('countries');
-     if(!Array.isArray(countries)) {container.innerHTML="Nothing found..." ; return }
+    if(!Array.isArray(countries)) {container.innerHTML="Nothing found..." ; return }
+    // Sort by population - Acending
+    // countries.sort( (a,b) => b.population < a.population);
 
     // Sort by population - Decending
     countries.sort( (a,b) => a.population < b.population);
@@ -56,7 +59,7 @@ const displayCountries = (countries) =>{
 
 // get data and set it to html
 function getCountry  (country) {
-    console.log(country)
+    // console.log(country)
     return `
         <div class="country-div">
         <img src="${country.flags.png}">
