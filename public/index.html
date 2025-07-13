@@ -16,19 +16,18 @@
   </header> 
   <main>
     <!-- Search field with two options: Search by country or by language -->
-    <form name="myForm">
-      <label for="search">Search by country or language:</label>
-      <input type="text" id="search" name="search" placeholder="Search by country or language">
-      
-      <select name="searchBy" id="searchBy" title="searchBy">
-        <option value="name">Country</option>
+    <form class="input-group input-group-lg gap-2 search_form mb-2" name="myForm">
+      <input class="form-control" type="text" id="search" name="search" placeholder="Search by country or language">
+      <select name="searchBy" id="searchBy" class="form-select" title="searchBy">
+        <option>Search by...</option>
+        <option selected value="name">Country</option>
         <option value="lang">Language</option>
       </select>
-      <button type="submit" id="submit" class="btn btn-secondary btn-md">Search</button>
+      <button type="submit" id="submit" class="btn btn-secondary">Search</button>
     </form>
 
     <!-- Search result-->
-    <section id="searchResult">
+    <section id="searchResult" class="search_result">
       <h2>Search result</h2>
       <ul id="searchResultList"></ul>
     </section>

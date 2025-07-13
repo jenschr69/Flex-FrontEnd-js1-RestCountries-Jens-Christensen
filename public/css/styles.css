@@ -29,12 +29,31 @@ header {
   padding: 0;
 }
 
+/* Styling of search forms */
+
+input, select {
+ margin-bottom: 0.3rem;
+}
+
+.search_form {
+  border-radius: 0;
+}
+
+.input-group > .btn {
+  border-radius: 10px !important;
+  padding: 0rem 1rem 0rem 1rem !important;
+  margin: unset !important;
+}
+
+/* Styling of search results */
 #searchResult {
   display: none;
-  min-height: 50px;
   background-color: lightgrey;
 }
 
+.search_result {
+  padding: 0.5rem 1rem 0.1rem 1rem;
+}
 .countries{
     max-width: 1240px;
     min-height: 50dvh;
@@ -46,7 +65,7 @@ header {
 .country-div{
     background: #eee;
     border: 1px solid black;
-    padding: 15px;
+    padding: 1rem;
 }
 img{
     width: 100%;
