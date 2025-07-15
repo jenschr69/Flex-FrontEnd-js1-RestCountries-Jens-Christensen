@@ -52,9 +52,17 @@ input, select {
 
 .btn_search {
   color:whitesmoke;
-  background-color: darkgrey;
+  font-weight: 700;
+  background-color: black;
   border: 1px solid whitesmoke;
   border-radius: 15px !important;
+  :hover {
+    color:whitesmoke;
+    font-weight: 700;
+    background-color: black;
+    border: 1px solid whitesmoke;
+    border-radius: 15px !important;
+  }
 }
 
 /* Styling of search results */
