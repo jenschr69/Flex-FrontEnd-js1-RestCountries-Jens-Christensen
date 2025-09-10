@@ -2,5 +2,6 @@
 https://www.youtube.com/watch?v=THZyM2z8s-o - Med fetch api - Test denna
 fungerar inte då gammalt api
 
-https://restcountries.com/ (https://www.restcountries.eu - gammal version - nu: https://countrylayer.com/ )
+https://restcountries.com/ (https://www.restcountries.eu - 
+gammal version - nu: https://countrylayer.com/ )
 
