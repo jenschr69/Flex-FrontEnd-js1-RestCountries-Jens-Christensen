@@ -40,55 +40,25 @@ submitButton.addEventListener("click", (e) => {
 async function loadCountryAPI() {
   const url =`https://restcountries.com/v3.1/${searchType}/${searchPhrase}`;
   try {
+    window.addEventListener('offline', e => console.log('network connection lost'));
+    window.addEventListener('online', e => console.log('network connection restored'));
     const response = await fetch(url);
-
-    if (response.status == 500) {
-          const container = document.getElementById('errors');
-        container.innerHTML=`<p style="color:red;">Error: ${response.status} - ${response.statusText}</p>`;
-        throw new Error(`HTTP error! status: ${response.status}`);
+    if (!response.ok) {
+      throw new Error(`Response status: ${response.status}`);
     }
-
     const result = await response.json();
     console.log(result);
     displayCountries(result);
     
   } catch (error) {
-
     console.error(error.message);
   }
 }
 
-// async function loadCountryAPI() {
-//   const url =`https://restcountries.com/v3.1/${searchType}/${searchPhrase}`;
-//   try {
-//     const response = await fetch(url);
-//     // if (response.status === 500) {
-//     //   const container = document.getElementById('errors');
-//     //     container.innerHTML=`<p style="color:red;">Error: ${response.status} - ${response.statusText}</p>`;
-//     //     throw new Error(`HTTP error! status: ${response.status}`);
-//     // }
-//     const result = await response.json();
-//     console.log(result);
-//     displayCountries(result);
-    
-//   } catch (error) {
-//     console.error(error.message);
-//   }
-// }
-
 // Displaying Countries
-const displayCountries = (countries) => {
-    let searchErrorMessage = '';
-    if (searchType == 'name') {
-        searchErrorMessage = 'No country found with that name...';
-    } else if (searchType == 'lang') {
-         searchErrorMessage = 'No country found with that language...';
-    }
-    else {
-        searchErrorMessage = 'Something went wrong...';
-    }
+const displayCountries = (countries) =>{
     const container = document.getElementById('countries');
-    if(!Array.isArray(countries)) {container.innerHTML= searchErrorMessage; return }
+    if(!Array.isArray(countries)) {container.innerHTML="Nothing found..." ; return }
     // Sort by population - Acending
     // countries.sort( (a,b) => b.population < a.population);
 
