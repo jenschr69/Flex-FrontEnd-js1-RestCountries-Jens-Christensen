@@ -13,6 +13,17 @@ for country search -> show one country with country info (no country has the sam
 for language search -> show one or several result depending on if the same language is spoken in more than 
 one country
 
+ERROR HANDLING
+Input errors
+The country does not exist
+No countries with that language
+Empty search
+
+Network errors - HOW TO SIMULATE ERRORS
+Slow network connection
+Slow connection to the network API
+Could not connect to web API 
+
 FOOTER
 copyright information - Assignment id - GitHub Repo link
 
