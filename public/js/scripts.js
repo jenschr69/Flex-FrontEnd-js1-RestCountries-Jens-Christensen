@@ -10,8 +10,11 @@ let searchType ="" , searchPhrase =""
 function validateForm() {
     let x = document.forms["myForm"]["search"].value;
     if (x == "") {
-        alert("Search phrase must be filled out");
+        // alert("Search phrase must be filled out");
         // document.getElementById("searchErrorMessage").style.display="block";
+        let searchErrorMessage = '';
+        document.getElementById("error").style.display="block";
+        document.getElementById("error").innerHTML=`<p style="color:red;">Search phrase must be filled out</p>`;
         document.getElementById("searchResult").style.display="none";
         return false;
     }
@@ -43,7 +46,8 @@ async function loadCountryAPI() {
     const response = await fetch(url);
 
     if (response.status == 500) {
-          const container = document.getElementById('errors');
+        // do I need to add: "document.getElementById("error").style.display="block";" to make the div visible?
+        const container = document.getElementById('errors');
         container.innerHTML=`<p style="color:red;">Error: ${response.status} - ${response.statusText}</p>`;
         throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -53,7 +57,6 @@ async function loadCountryAPI() {
     displayCountries(result);
     
   } catch (error) {
-
     console.error(error.message);
   }
 }

@@ -101,6 +101,10 @@ input, select {
   padding-left: 1rem;
 }
 
+#error {
+  display: none;
+}
+
 .countries{
     padding: 0.5rem 0rem 1rem 1rem;
     margin: 1px auto;
