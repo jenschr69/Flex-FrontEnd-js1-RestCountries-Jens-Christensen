@@ -61,6 +61,8 @@ async function loadCountryAPI() {
   }
 }
 
+// How do I add more errors? 
+
 // async function loadCountryAPI() {
 //   const url =`https://restcountries.com/v3.1/${searchType}/${searchPhrase}`;
 //   try {
@@ -110,7 +112,7 @@ const displayCountries = (countries) => {
     container.innerHTML = countriesHTML.join(' ');
 }
 
-// get data and set it to html
+// Get data and add it to html
 function getCountry  (country) {
     // console.log(country)
     return `
