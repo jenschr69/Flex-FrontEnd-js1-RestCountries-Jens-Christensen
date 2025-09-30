@@ -41,14 +41,14 @@ submitButton.addEventListener("click", (e) => {
 // }
 
 async function loadCountryAPI() {
-  const url =`https://restcountries.com/v3.1/${searchType}/${searchPhrase}`;
+  const url =`https://restcountries.com/v3.1/${searchType}gh/${searchPhrase}`;
   try {
     const response = await fetch(url);
 
-    if (response.status == 500) {
+    if (response.status >= 400) {
         // do I need to add: "document.getElementById("error").style.display="block";" to make the div visible?
-        const container = document.getElementById('errors');
-        container.innerHTML=`<p style="color:red;">Error: ${response.status} - ${response.statusText}</p>`;
+        //const container = document.getElementById('errors');
+        //container.innerHTML=`<p style="color:red;">Error: ${response.status} - ${response.statusText}</p>`;
         throw new Error(`HTTP error! status: ${response.status}`);
     }
 
@@ -57,7 +57,9 @@ async function loadCountryAPI() {
     displayCountries(result);
     
   } catch (error) {
-    console.error(error.message);
+    console.error(error.message); 
+    //const container = document.getElementById('errors');
+     //container.innerHTML=`<p style="color:red;">Error: ${response.status} - ${response.statusText}</p>`;
   }
 }
 
