@@ -7,12 +7,11 @@
 // Get all
 let searchType ="" , searchPhrase =""
 
-// Error message for empty search
-// Can this be replaced by adding the "required" option to the form? - Clara
-// This function is displaying an error for both Country and Language
 function validateForm() {
     let x = document.forms["myForm"]["search"].value;
     if (x == "") {
+        // alert("Search phrase must be filled out");
+        // document.getElementById("searchErrorMessage").style.display="block";
         let searchErrorMessage = '';
         document.getElementById("error").style.display="block";
         document.getElementById("error").innerHTML=`<p style="color:red;">Search phrase must be filled out</p>`;
@@ -32,7 +31,15 @@ submitButton.addEventListener("click", (e) => {
     loadCountryAPI()
 })
 
-// This function is handling errors connecting to the api
+// Kommentera ut kod ctrl+k+c
+// Avkommentera ctrl+k+u
+// const loadCountryAPI = () =>{
+//     // fetch url of rest country from website
+//     var res = fetch(`https://restcountries.com/v3.1/${searchType}/${searchPhrase}`)
+//     .then(res => res.json())
+//     .then(data => displayCountries(data));
+// }
+
 async function loadCountryAPI() {
   const url =`https://restcountries.com/v3.1/${searchType}/${searchPhrase}`;
   try {
@@ -45,22 +52,36 @@ async function loadCountryAPI() {
         throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    if (response.status === 500) {
-    const container = document.getElementById('errors');
-    container.innerHTML=`<p style="color:red;">Error: ${response.status} - ${response.statusText}</p>`;
-    throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
     const result = await response.json();
     console.log(result);
     displayCountries(result);
     
-    } catch (error) {
-    // console.error(error.message); 
-    const container = document.getElementById('errors');
-    container.innerHTML=`<p style="color:red;">Error: ${response.status} - ${response.statusText}</p>`;
+  } catch (error) {
+    console.error(error.message); 
+    //const container = document.getElementById('errors');
+     //container.innerHTML=`<p style="color:red;">Error: ${response.status} - ${response.statusText}</p>`;
   }
 }
+
+// How do I add more errors? 
+
+// async function loadCountryAPI() {
+//   const url =`https://restcountries.com/v3.1/${searchType}/${searchPhrase}`;
+//   try {
+//     const response = await fetch(url);
+//     // if (response.status === 500) {
+//     //   const container = document.getElementById('errors');
+//     //     container.innerHTML=`<p style="color:red;">Error: ${response.status} - ${response.statusText}</p>`;
+//     //     throw new Error(`HTTP error! status: ${response.status}`);
+//     // }
+//     const result = await response.json();
+//     console.log(result);
+//     displayCountries(result);
+    
+//   } catch (error) {
+//     console.error(error.message);
+//   }
+// }
 
 // Displaying Countries
 const displayCountries = (countries) => {
@@ -75,9 +96,17 @@ const displayCountries = (countries) => {
     }
     const container = document.getElementById('countries');
     if(!Array.isArray(countries)) {container.innerHTML= searchErrorMessage; return }
+    // Sort by population - Acending
+    // countries.sort( (a,b) => b.population < a.population);
 
     // Sort by population - Decending
     countries.sort( (a,b) => a.population < b.population);
+
+    // Sort by country name - Acending
+    // countries.sort( (a,b) => b.name.common < a.name.common)
+
+    // Sort by country name - Decending
+    // countries.sort( (a,b) => a.name.common < b.name.common)
 
     const countriesHTML = countries.map(country => getCountry(country));
 
@@ -98,3 +127,5 @@ function getCountry  (country) {
         </div>
     `
 }
+// call the funtion to get output in console
+//loadCountryAPI()
