@@ -7,7 +7,7 @@
 // Get all
 let searchType ="" , searchPhrase =""
 
-// Error message for empty search
+// Error message for empty search - Does this need to be specific for country and language
 // Can this be replaced by adding the "required" option to the form? - Clara
 // This function is displaying an error for both Country and Language
 function validateForm() {
@@ -28,7 +28,7 @@ submitButton.addEventListener("click", (e) => {
     validateForm()
     searchPhrase = document.getElementById("search").value
     searchType = document.getElementById("searchBy").value
-    console.log(`https://restcountries.com/v3.1/${searchType}/${searchPhrase}`);
+    // console.log(`https://restcountries.com/v3.1/${searchType}/${searchPhrase}`);
     loadCountryAPI()
 })
 
