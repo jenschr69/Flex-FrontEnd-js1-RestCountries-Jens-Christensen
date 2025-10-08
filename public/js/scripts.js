@@ -14,22 +14,27 @@ function validateForm() {
     let x = document.forms["myForm"]["search"].value;
     if (x == "") {
         let searchErrorMessage = '';
-        document.getElementById("error").style.display="block";
-        document.getElementById("error").innerHTML=`<p style="color:red;">Search phrase must be filled out</p>`;
+        document.getElementById("emptySearchErrorMessage").style.display="block";
+        document.getElementById("emptySearchErrorMessage").innerHTML=`<p style="color:red;">Search phrase must be filled out</p>`;
         document.getElementById("searchResult").style.display="none";
+        document.getElementById("error").style.display="none";
         return false;
     }
+    return true;
 }
 
 let submitButton= document.querySelector("#submit")
 submitButton.addEventListener("click", (e) => {
     e.preventDefault()
+    document.getElementById("emptySearchErrorMessage").style.display="none"
+    document.getElementById("error").style.display="none"
     document.getElementById("searchResult").style.display="block"
-    validateForm()
+    const isvalid =  validateForm()
+    console.log(isvalid);
     searchPhrase = document.getElementById("search").value
     searchType = document.getElementById("searchBy").value
     // console.log(`https://restcountries.com/v3.1/${searchType}/${searchPhrase}`);
-    loadCountryAPI()
+    if (isvalid) loadCountryAPI()
 })
 
 // This function is handling errors connecting to the api
@@ -37,6 +42,7 @@ async function loadCountryAPI() {
   const url =`https://restcountries.com/v3.1/${searchType}/${searchPhrase}`;
   try {
     const response = await fetch(url);
+    console.log(response.status);
 
     if (response.status >= 400) {
         // do I need to add: "document.getElementById("error").style.display="block";" to make the div visible?
@@ -45,20 +51,25 @@ async function loadCountryAPI() {
         throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    if (response.status === 500) {
-    const container = document.getElementById('errors');
-    container.innerHTML=`<p style="color:red;">Error: ${response.status} - ${response.statusText}</p>`;
+    else if (response.status >= 500) {
+    // const container = document.getElementById('errors');
+    // container.innerHTML=`<p style="color:red;">Error: ${response.status} - ${response.statusText}</p>`;
     throw new Error(`HTTP error! status: ${response.status}`);
     }
 
     const result = await response.json();
     console.log(result);
     displayCountries(result);
+
     
     } catch (error) {
+        console.log('error')
     // console.error(error.message); 
-    const container = document.getElementById('errors');
-    container.innerHTML=`<p style="color:red;">Error: ${response.status} - ${response.statusText}</p>`;
+    const container = document.getElementById('error');
+    // Error message not displayed because the block is not visible
+    document.getElementById("error").style.display="block"
+    // container.innerHTML=`<p style="color:red;">Error: ${response.status} - ${response.statusText}</p>`;
+    container.innerHTML=`<p style="color:red; padding-left:2rem;">No results found</p>`;
   }
 }
 
