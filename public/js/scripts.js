@@ -7,9 +7,7 @@
 // Get all
 let searchType ="" , searchPhrase =""
 
-// Error message for empty search - Does this need to be specific for country and language
-// Can this be replaced by adding the "required" option to the form? - Clara
-// This function is displaying an error for both Country and Language
+// This function is displaying an error for both Country and Language - Empty search
 function validateForm() {
     let x = document.forms["myForm"]["search"].value;
     if (x == "") {
@@ -33,7 +31,6 @@ submitButton.addEventListener("click", (e) => {
     console.log(isvalid);
     searchPhrase = document.getElementById("search").value
     searchType = document.getElementById("searchBy").value
-    // console.log(`https://restcountries.com/v3.1/${searchType}/${searchPhrase}`);
     if (isvalid) loadCountryAPI()
 })
 
@@ -45,29 +42,19 @@ async function loadCountryAPI() {
     console.log(response.status);
 
     if (response.status >= 400) {
-        // do I need to add: "document.getElementById("error").style.display="block";" to make the div visible?
-        //const container = document.getElementById('errors');
-        //container.innerHTML=`<p style="color:red;">Error: ${response.status} - ${response.statusText}</p>`;
         throw new Error(`HTTP error! status: ${response.status}`);
     }
 
     else if (response.status >= 500) {
-    // const container = document.getElementById('errors');
-    // container.innerHTML=`<p style="color:red;">Error: ${response.status} - ${response.statusText}</p>`;
     throw new Error(`HTTP error! status: ${response.status}`);
     }
 
     const result = await response.json();
-    console.log(result);
     displayCountries(result);
 
     } catch (error) {
-        console.log('error')
-    // console.error(error.message); 
     const container = document.getElementById('error');
-    // Error message not displayed because the block is not visible
     document.getElementById("error").style.display="block"
-    // container.innerHTML=`<p style="color:red;">Error: ${response.status} - ${response.statusText}</p>`;
     container.innerHTML=`<p style="color:red; padding-left:2rem;">No results found</p>`;
   }
 }
@@ -91,13 +78,12 @@ const displayCountries = (countries) => {
 
     const countriesHTML = countries.map(country => getCountry(country));
 
-    // displaying div to html
+    // Displaying div to html
     container.innerHTML = countriesHTML.join(' ');
 }
 
 // Get data and add it to html
 function getCountry  (country) {
-    // console.log(country)
     return `
         <div class="country-div">
         <img src="${country.flags.png}">
