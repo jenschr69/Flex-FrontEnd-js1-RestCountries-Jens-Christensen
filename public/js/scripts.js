@@ -61,7 +61,6 @@ async function loadCountryAPI() {
     console.log(result);
     displayCountries(result);
 
-    
     } catch (error) {
         console.log('error')
     // console.error(error.message); 
